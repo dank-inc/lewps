@@ -1,4 +1,4 @@
-import { forU } from "./lib/forU";
+import { forU } from ".";
 
 console.log("forU 10 steps");
 forU(10, (u) => {

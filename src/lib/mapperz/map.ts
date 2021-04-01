@@ -1,0 +1,27 @@
+import { forU } from "../lewperz/forU";
+
+export const cloneU = <T>(thing: T, n: number, property: keyof T): T[] => {
+  const arr: T[] = [];
+  forU(n, (u) => arr.push({ ...thing, [property]: u }));
+  return arr;
+};
+
+export const cloneMap = <T>(
+  thing: T,
+  n: number,
+  cb: (u: number) => Partial<T>
+): T[] => {
+  const arr: T[] = [];
+  forU(n, (u) => {
+    const item = { ...thing, ...cb(u) };
+
+    arr.push(item);
+  });
+  return arr;
+};
+
+export const mapU = <T>(n: number, cb: (u: number) => T): T[] => {
+  const arr: T[] = [];
+  forU(n, (u) => arr.push(cb(u)));
+  return arr;
+};
