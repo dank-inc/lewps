@@ -39,6 +39,6 @@ export const mapUV = <T>(
   cb: (u: number, v: number) => T
 ): T[] => {
   const arr: T[] = [];
-  forU(y, (v) => forU(x, (u) => cb(u, v)));
+  forU(y, (v) => forU(x, (u) => arr.push(cb(u, v))));
   return arr;
 };
