@@ -9,7 +9,8 @@ export const forU = (steps: number, fn: ForUCallback, opts?: Options) => {
   const start = opts?.start || 0;
   const end = opts?.end || 1;
 
-  const step = (end - start) / steps;
-
-  for (let u = start; u <= end; u += step) fn(u);
+  for (let i = 0; i < steps; i += 1) {
+    const u = (i / (steps - 1)) * (end - start) + start;
+    fn(u);
+  }
 };

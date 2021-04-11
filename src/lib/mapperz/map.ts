@@ -33,12 +33,12 @@ export const mapI = <T>(n: number, cb: (i: number) => T): T[] => {
   return arr;
 };
 
-export const mapUV = <T>(
+export const mapXY = <T>(
   x: number,
   y: number,
   cb: (u: number, v: number) => T
 ): T[] => {
   const arr: T[] = [];
-  forU(y, (v) => forU(x, (u) => arr.push(cb(u, v))));
+  forN(y, (_, v) => forN(x, (_, u) => arr.push(cb(u, v))));
   return arr;
 };

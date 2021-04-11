@@ -5,10 +5,10 @@ type Opts = {
 
 export const forN = (n: number, fn: ForNCallback, opts?: Opts) => {
   if (!opts || opts?.type === "lt") {
-    for (let i = 0; i < n; i++) fn(i, i / n);
+    for (let i = 0; i < n; i++) fn(i, i / (n - 1));
   }
 
   if (opts?.type === "lteq") {
-    for (let i = 0; i <= n; i++) fn(i, i / n);
+    for (let i = 0; i <= n; i++) fn(i, i / (n - 1));
   }
 };

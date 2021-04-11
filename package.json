@@ -1,6 +1,6 @@
 {
   "name": "@dank-inc/lewps",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Some dank loop functions!",
   "private": false,
   "files": [
@@ -12,7 +12,7 @@
     "lint": "tsc --noEmit",
     "compile": "rm -rf dist && tsc",
     "deploy": "npm run compile && npm publish",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Elijah Lucian",
   "repository": {
