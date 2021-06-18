@@ -21,6 +21,14 @@ export const cloneMap = <T>(
   return arr;
 };
 
+export const mapItems = <T, R extends Record<string, any>>(
+  items: T[],
+  cb: (item: T, i: number, u: number) => R
+) => {
+  // for items
+  // callback
+};
+
 export const mapU = <T>(n: number, cb: (u: number) => T): T[] => {
   const arr: T[] = [];
   forU(n, (u) => arr.push(cb(u)));
